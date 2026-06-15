@@ -1,6 +1,6 @@
 // data.js
 // ============================================
-// CONFIGURATION CENTRALE — PGDay Antananarivo 2026
+// CONFIGURATION CENTRALE — PGConf Antananarivo 2026
 // Pour mettre à jour le site, modifiez UNIQUEMENT ce fichier.
 // ============================================
 
@@ -118,7 +118,7 @@ window.PGDAY_DATA = {
       photo: "assets/images/photos-organisateurs/tokifanantenana.jpg"
     },
     {
-      name: "Bodo Arivola",
+      name: "Bodoharivola",
       role: "Computer Scientist",
       institution: "MATSF",
       category: "Comité de sélection / Program Committee",
@@ -173,7 +173,7 @@ window.PGDAY_DATA = {
 
   codeOfConduct: {
     title: "Code de bonne conduite",
-    text: "Le PGDay Antananarivo s'engage à fournir une expérience de conférence sûre, inclusive et respectueuse pour tous les participants, quelle que soit leur identité, leur origine, leur niveau d'expérience ou leurs croyances.",
+    text: "La PGConf - Conférence PostgreSQL Antananarivo s'engage à fournir une expérience de conférence sûre, inclusive et respectueuse pour tous les participants, quelle que soit leur identité, leur origine, leur niveau d'expérience ou leurs croyances.",
     points: [
       "Traiter tout le monde avec respect, bienveillance et courtoisie",
       "Aucune tolérance pour le harcèlement, la discrimination ou les comportements intimidants",
