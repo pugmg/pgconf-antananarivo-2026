@@ -10,7 +10,7 @@ window.PGDAY_DATA = {
     subtitle: "Conférence PostgreSQL à Madagascar",
     badge: "Édition en présentiel",
     // Facilement modifiable : changez la date ou les horaires ici
-    dateLabel: "Samedi 18 juillet 2026 — 08:30 à 17:15",
+    dateLabel: "Samedi 18 juillet 2026 — 08:30 à 13:30",
     locationLabel: "Chez l'INGENOSYA Anosizato, Antananarivo, Madagascar",
     venueName: "Chez l'INGENOSYA",
     venueAddress: "4ème Etage de l'Immeuble Record Anosizato, Antananarivo 101, Madagascar",
@@ -83,13 +83,8 @@ window.PGDAY_DATA = {
     { time: "10:30 - 10:45", tag: "Pause", tagClass: "tag-pause", title: "Pause café", desc: "Moment d'échange entre participants et partenaires.", speaker: "" },
     { time: "10:45 - 11:30", tag: "Talk", tagClass: "tag-talk", title: "Développement géomatique avec PostgreSQL", desc: "Retour d'expérience sur les usages de PostgreSQL dans des projets géospatiaux.", speaker: "Dominique RAKOTONIRINA" },
     { time: "11:30 - 12:15", tag: "Talk", tagClass: "tag-talk", title: "Construire des interfaces modernes autour des données PostgreSQL", desc: "Bonnes pratiques frontend pour visualiser et valoriser des données PostgreSQL.", speaker: "RAVAKINIAINA Tokifanantenana" },
-    { time: "12:15 - 13:30", tag: "Pause", tagClass: "tag-pause", title: "Pause déjeuner", desc: "Déjeuner et networking.", speaker: "" },
-    { time: "13:30 - 14:30", tag: "Workshop", tagClass: "tag-workshop", title: "Atelier pratique PostgreSQL", desc: "Session guidée : requêtes, indexation, extensions et bonnes pratiques.", speaker: "À définir" },
-    { time: "14:30 - 15:15", tag: "Talk", tagClass: "tag-talk", title: "Performance, index et optimisation", desc: "Comprendre les plans d'exécution et optimiser les requêtes.", speaker: "À définir" },
-    { time: "15:15 - 15:30", tag: "Pause", tagClass: "tag-pause", title: "Pause café", desc: "Échanges informels et networking.", speaker: "" },
-    { time: "15:30 - 16:15", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL en production", desc: "Sauvegarde, supervision, maintenance et bonnes pratiques.", speaker: "À définir" },
-    { time: "16:15 - 17:00", tag: "Networking", tagClass: "tag-networking", title: "Échanges communautaires", desc: "Discussion ouverte sur les besoins et perspectives de la communauté.", speaker: "Communauté PostgreSQL Madagascar" },
-    { time: "17:00 - 17:15", tag: "Clôture", tagClass: "tag-closing", title: "Clôture du PGDay Antananarivo 2026", desc: "Synthèse de la journée, remerciements et prochaines étapes.", speaker: "Comité d'organisation" }
+    { time: "12:15 - 13:00", tag: "Networking", tagClass: "tag-networking", title: "Échanges communautaires", desc: "Discussion ouverte sur les besoins et perspectives de la communauté.", speaker: "Communauté PostgreSQL Madagascar" },
+    { time: "13:00 - 13:30", tag: "Clôture", tagClass: "tag-closing", title: "Clôture du PGDay Antananarivo 2026", desc: "Synthèse de la journée, remerciements et prochaines étapes.", speaker: "Comité d'organisation" }
   ],
 
 
