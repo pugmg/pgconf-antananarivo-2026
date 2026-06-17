@@ -1868,8 +1868,48 @@
           </div>`;
       });
 
-      // --- Programme ---
-      document.getElementById('programme-intro-text').textContent = e.programmeIntro;
+// --- Programme ---
+document.getElementById('programme-intro-text').textContent = e.programmeIntro;
+
+const programmeContainer = document.querySelector('#programme .container');
+
+// Remplacer le contenu "stay tuned" par le vrai programme
+if (e.programmeAvailable && d.programme && d.programme.length > 0) {
+    // Supprimer la boîte stay-tuned
+    const stayTuned = document.querySelector('.stay-tuned-box');
+    if (stayTuned) stayTuned.remove();
+
+    let programmeHTML = `
+        <div class="programme-timeline animate-on-scroll stagger-1" style="margin-top: 2.5rem;">
+    `;
+
+    d.programme.forEach(item => {
+        const isPause = item.tagClass === 'tag-pause';
+        const isOpening = item.tagClass === 'tag-opening';
+        const isNetworking = item.tagClass === 'tag-networking';
+
+        programmeHTML += `
+            <div class="programme-item ${isPause ? 'pause' : ''}" style="display: flex; gap: 1.5rem; margin-bottom: 1.8rem; align-items: flex-start;">
+                <div style="min-width: 110px; font-weight: 700; color: ${isPause ? '#666' : 'var(--pg-blue-dark)'};">
+                    ${item.time}
+                </div>
+                <div style="flex: 1;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                        <span class="tag ${item.tagClass}" style="padding: 3px 10px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700;">
+                            ${item.tag}
+                        </span>
+                        ${item.speaker ? `<strong style="color: var(--pg-blue);">${item.speaker}</strong>` : ''}
+                    </div>
+                    <strong style="font-size: 1.1rem; display: block; margin-bottom: 6px;">${item.title}</strong>
+                    <p style="color: #555; line-height: 1.6;">${item.desc}</p>
+                </div>
+            </div>
+        `;
+    });
+
+    programmeHTML += `</div>`;
+    programmeContainer.insertAdjacentHTML('beforeend', programmeHTML);
+}
 
       // --- Membres ---
       document.getElementById('members-intro').textContent = e.membersIntro;
