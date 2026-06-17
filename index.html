@@ -108,6 +108,18 @@
       }
     }
 
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(30px);
@@ -248,6 +260,35 @@
 
     @media (max-width: 900px) {
       .nav-links {
+        display: none;
+      }
+
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        padding: 0.5rem 0;
+        animation: slideDown 0.25s ease both;
+      }
+
+      .nav-links.mobile-open li {
+        width: 100%;
+      }
+
+      .nav-links.mobile-open a {
+        display: block;
+        padding: 14px 2rem;
+      }
+
+      .nav-links.mobile-open a::after {
         display: none;
       }
 
@@ -1438,10 +1479,10 @@
       <li><a href="#programme">Programme</a></li>
       <li><a href="#membres">Membres</a></li>
       <li><a href="#lieu">Lieu</a></li>
-      <li><a href="#sponsors">Devenir Sponsors</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a href="#code-de-conduite">Code de conduite</a></li>
     </ul>
-    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')"
-      aria-label="Menu">☰</button>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu" aria-expanded="false">☰</button>
   </nav>
 
   <!-- HERO -->
@@ -1716,8 +1757,30 @@
       pendingUrl = '';
     }
 
+    /* =========================================
+       MENU MOBILE
+       ========================================= */
+    function toggleMobileMenu() {
+      const links = document.querySelector('.nav-links');
+      const btn = document.querySelector('.mobile-menu-btn');
+      const isOpen = links.classList.toggle('mobile-open');
+      btn.textContent = isOpen ? '✕' : '☰';
+      btn.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    function closeMobileMenu() {
+      const links = document.querySelector('.nav-links');
+      const btn = document.querySelector('.mobile-menu-btn');
+      links.classList.remove('mobile-open');
+      btn.textContent = '☰';
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape') {
+        closeModal();
+        closeMobileMenu();
+      }
     });
 
     /* =========================================
@@ -1847,6 +1910,21 @@
       // --- Navbar scroll effect ---
       window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+      });
+
+      // --- Fermeture du menu mobile au clic sur un lien ---
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      // --- Fermeture du menu mobile au clic en dehors ---
+      document.addEventListener('click', (e) => {
+        if (!document.getElementById('navbar').contains(e.target)) closeMobileMenu();
+      });
+
+      // --- Fermeture du menu mobile si la fenêtre redevient large ---
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) closeMobileMenu();
       });
     });
   </script>
