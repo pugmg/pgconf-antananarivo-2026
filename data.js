@@ -35,7 +35,7 @@ window.PGDAY_DATA = {
     // Bascule facile du programme :
     // false = affiche "A VENIR / STAY TUNED" (mise à jour ultra simple)
     // true  = affiche le tableau 'programme' ci-dessous
-    programmeAvailable: false
+    programmeAvailable: true
   },
 
   stats: [
@@ -76,16 +76,35 @@ window.PGDAY_DATA = {
   // Si vous videz le tableau et mettez programmeAvailable: false,
   // le site affichera automatiquement "A VENIR / STAY TUNED".
   programme: [
-    { time: "08:30 - 09:00", tag: "Accueil", tagClass: "tag-pause", title: "Enregistrement et café d'accueil", desc: "Accueil des participants, remise des badges et café de bienvenue.", speaker: "" },
-    { time: "09:00 - 09:15", tag: "Ouverture", tagClass: "tag-opening", title: "Mots de bienvenue", desc: "Introduction du PGDay Antananarivo 2026 et présentation de la communauté.", speaker: "Comité d'organisation" },
-    { time: "09:15 - 10:00", tag: "Keynote", tagClass: "tag-keynote", title: "PostgreSQL : le choix open-source pour les données critiques", desc: "Pourquoi PostgreSQL est un pilier fiable pour les applications modernes.", speaker: "À définir" },
-    { time: "10:00 - 10:30", tag: "Talk", tagClass: "tag-talk", title: "PostGIS au service de la gouvernance géospatiale", desc: "Cas pratiques de gestion et analyse de données géographiques avec PostGIS.", speaker: "Baovola Marie Anna" },
-    { time: "10:30 - 10:45", tag: "Pause", tagClass: "tag-pause", title: "Pause café", desc: "Moment d'échange entre participants et partenaires.", speaker: "" },
-    { time: "10:45 - 11:30", tag: "Talk", tagClass: "tag-talk", title: "Développement géomatique avec PostgreSQL", desc: "Retour d'expérience sur les usages de PostgreSQL dans des projets géospatiaux.", speaker: "Dominique RAKOTONIRINA" },
-    { time: "11:30 - 12:15", tag: "Talk", tagClass: "tag-talk", title: "Construire des interfaces modernes autour des données PostgreSQL", desc: "Bonnes pratiques frontend pour visualiser et valoriser des données PostgreSQL.", speaker: "RAVAKINIAINA Tokifanantenana" },
-    { time: "12:15 - 13:00", tag: "Networking", tagClass: "tag-networking", title: "Échanges communautaires", desc: "Discussion ouverte sur les besoins et perspectives de la communauté.", speaker: "Communauté PostgreSQL Madagascar" },
-    { time: "13:00 - 13:30", tag: "Clôture", tagClass: "tag-closing", title: "Clôture du PGDay Antananarivo 2026", desc: "Synthèse de la journée, remerciements et prochaines étapes.", speaker: "Comité d'organisation" }
-  ],
+    { time: "08:30 - 08:50", tag: "Accueil", tagClass: "tag-pause", title: "Accueil des participants", desc: "Enregistrement, remise des badges et café de bienvenue.", speaker: "" },
+    { time: "08:50 - 08:55", tag: "Ouverture", tagClass: "tag-opening", title: "Introduction de la communauté MG-PUG", desc: "Présentation de la communauté PostgreSQL Madagascar.", speaker: "MG-PUG" },
+    { time: "08:55 - 09:00", tag: "Ouverture", tagClass: "tag-opening", title: "Introduction Ingenosya", desc: "Mot de bienvenue et présentation du sponsor.", speaker: "Ingenosya" },
+    
+    { time: "09:00 - 09:25", tag: "Talk", tagClass: "tag-talk", title: "Administration et optimisation PostgreSQL", desc: "Bonnes pratiques d’administration, tuning et optimisation des performances.", speaker: "À définir" },
+    { time: "09:25 - 09:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
+    
+    { time: "09:30 - 09:55", tag: "Talk", tagClass: "tag-talk", title: "Sécurité des bases de données PostgreSQL", desc: "Gestion des droits, chiffrement, audits et bonnes pratiques de sécurisation.", speaker: "À définir" },
+    { time: "09:55 - 10:00", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
+    
+    { time: "10:00 - 10:25", tag: "Talk", tagClass: "tag-talk", title: "Sauvegarde et réplication PostgreSQL", desc: "Stratégies de backup, PITR, réplication logique et haute disponibilité.", speaker: "À définir" },
+    { time: "10:25 - 10:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
+    
+    { time: "10:30 - 10:45", tag: "Pause", tagClass: "tag-pause", title: "Pause café", desc: "Échanges entre participants.", speaker: "" },
+    
+    { time: "10:45 - 11:10", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL et le Cloud", desc: "Déploiement, gestion et optimisation de PostgreSQL dans les environnements cloud.", speaker: "À définir" },
+    { time: "11:10 - 11:15", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
+    
+    { time: "11:15 - 11:40", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL et la cartographie avec PostGIS", desc: "Cas d’usage géospatiaux et analyse de données géographiques.", speaker: "Baovola Marie Anna" },
+    { time: "11:40 - 11:45", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
+    
+    { time: "11:45 - 12:10", tag: "Talk", tagClass: "tag-talk", title: "Développement d’API avec PostgreSQL", desc: "Bonnes pratiques pour exposer et consommer des données PostgreSQL via des APIs modernes.", speaker: "RAVAKINIAINA Tokifanantenana" },
+    { time: "12:10 - 12:15", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
+    
+    { time: "12:15 - 12:25", tag: "Talk", tagClass: "tag-talk", title: "Retours d’expériences en entreprise & IA", desc: "Cas concrets d’usage PostgreSQL en entreprise et intégration avec l’intelligence artificielle.", speaker: "Dominique RAKOTONIRINA" },
+    { time: "12:25 - 12:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
+    
+    { time: "12:30 - 13:00", tag: "Networking", tagClass: "tag-networking", title: "Réseautage et collation", desc: "Échanges communautaires autour d’un déjeuner léger.", speaker: "Communauté PostgreSQL Madagascar" }
+],
 
 
   // Membres — ajoutez simplement la propriété 'photo' avec le chemin vers l'image.
