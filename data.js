@@ -98,10 +98,10 @@ window.PGDAY_DATA = {
     { time: "11:15 - 11:40", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL et la cartographie avec PostGIS", desc: "Cas d’usage géospatiaux et analyse de données géographiques.", speaker: "Baovola Marie Anna" },
     { time: "11:40 - 11:45", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
-    { time: "11:45 - 12:10", tag: "Talk", tagClass: "tag-talk", title: "Développement d’API avec PostgreSQL", desc: "Bonnes pratiques pour exposer et consommer des données PostgreSQL via des APIs modernes.", speaker: "RAVAKINIAINA Tokifanantenana" },
+    { time: "11:45 - 12:10", tag: "Talk", tagClass: "tag-talk", title: "Développement d’API avec PostgreSQL", desc: "Bonnes pratiques pour exposer et consommer des données PostgreSQL via des APIs modernes.", speaker: " " },
     { time: "12:10 - 12:15", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
-    { time: "12:15 - 12:25", tag: "Talk", tagClass: "tag-talk", title: "Retours d’expériences en entreprise & IA", desc: "Cas concrets d’usage PostgreSQL en entreprise et intégration avec l’intelligence artificielle.", speaker: "Dominique RAKOTONIRINA" },
+    { time: "12:15 - 12:25", tag: "Talk", tagClass: "tag-talk", title: "Retours d’expériences en entreprise & IA", desc: "Cas concrets d’usage PostgreSQL en entreprise et intégration avec l’intelligence artificielle.", speaker: " " },
     { time: "12:25 - 12:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
     { time: "12:30 - 13:00", tag: "Networking", tagClass: "tag-networking", title: "Réseautage et collation", desc: "Échanges communautaires autour d’un déjeuner léger.", speaker: "Communauté PostgreSQL Madagascar" }
