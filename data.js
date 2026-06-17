@@ -35,7 +35,7 @@ window.PGDAY_DATA = {
     // Bascule facile du programme :
     // false = affiche "A VENIR / STAY TUNED" (mise à jour ultra simple)
     // true  = affiche le tableau 'programme' ci-dessous
-    programmeAvailable: true
+    programmeAvailable: false
   },
 
   stats: [
