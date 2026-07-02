@@ -249,6 +249,28 @@
       display: none !important;
     }
 
+    /* PROGRESS BAR */
+    #nav-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--pg-blue), var(--pg-yellow));
+      transition: width 0.1s linear;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* ACTIVE NAV LINK */
+    .nav-links a.active {
+      color: var(--pg-blue-dark);
+      font-weight: 700;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
     .mobile-menu-btn {
       display: none;
       background: none;
@@ -1602,6 +1624,7 @@
 
   <!-- NAVIGATION — Inscription retirée -->
   <nav id="navbar">
+    <div id="nav-progress" aria-hidden="true"></div>
    <a href="#accueil" class="nav-logo" aria-label="Accueil PGConf Antananarivo">
   <img src="assets/logo.jpg" alt="PGConf Logo" class="nav-logo-img"
        onerror="this.style.display='none'">
@@ -2101,8 +2124,26 @@ if (e.programmeAvailable && d.programme && d.programme.length > 0) {
       document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
       // --- Navbar scroll effect ---
+      const progressBar = document.getElementById('nav-progress');
+      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
       window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+
+        // Barre de progression
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+
+        // Active link
+        let current = '';
+        sections.forEach(section => {
+          if (window.scrollY >= section.offsetTop - 120) current = '#' + section.id;
+        });
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === current);
+        });
       });
 
       // --- Fermeture du menu mobile au clic sur un lien ---

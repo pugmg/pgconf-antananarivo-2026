@@ -1,17 +1,17 @@
-# PGDay Antananarivo 2026
+# PGConf Antananarivo 2026
 
 Site officiel de la rencontre de la communauté PostgreSQL de Madagascar.
 
 **Date :** Samedi 18 juillet 2026  
 **Lieu :** Chez l'INGENOSYA, Anosizato, Antananarivo
 
-🔗 **Site en ligne :** [https://pugmg.github.io/pgday-antananarivo-2026/](https://pugmg.github.io/pgday-antananarivo-2026/)
+🔗 **Site en ligne :** [https://pugmg.github.io/pgconf-antananarivo-2026/](https://pugmg.github.io/pgconf-antananarivo-2026/)
 
 ---
 
 ## À propos
 
-Ce site est une page statique (HTML / CSS / JavaScript vanilla) présentant la conférence PGDay Antananarivo 2026. Il est conçu pour être hébergé gratuitement sur **GitHub Pages**, sans backend ni base de données.
+Ce site est une page statique (HTML / CSS / JavaScript vanilla) présentant la conférence PGConf Antananarivo 2026. Il est conçu pour être hébergé gratuitement sur **GitHub Pages**, sans backend ni base de données.
 
 ---
 
