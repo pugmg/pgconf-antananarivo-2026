@@ -686,33 +686,7 @@
       color: var(--text-muted);
       font-weight: 500;
     }
-    
-/* PROGRAMME TIMELINE */
-.programme-item {
-    position: relative;
-    padding-left: 20px;
-}
 
-.programme-item::before {
-    content: '';
-    position: absolute;
-    left: 8px;
-    top: 10px;
-    bottom: -20px;
-    width: 3px;
-    background: #e5e7eb;
-    border-radius: 9999px;
-}
-
-.programme-item:last-child::before {
-    display: none;
-}
-
-.tag-pause { background: #f3f4f6; color: #4b5563; }
-.tag-opening { background: #dbeafe; color: #1e40af; }
-.tag-talk { background: #e0f2fe; color: #0369a1; }
-.tag-networking { background: #fef3c7; color: #92400e; }
-.tag-closing { background: #ecfdf5; color: #065f46; }
     /* MEMBRES */
     .members-group {
       margin-top: 3rem;
@@ -1079,6 +1053,125 @@
       background: var(--pg-blue-dark);
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(51, 103, 145, 0.35);
+    }
+
+    /* SPONSORS & PARTENAIRES — style éditorial : ligne de tier sobre, logos sans carte */
+    .sponsor-tiers {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 800px;
+      margin: 3.5rem auto 4rem;
+    }
+
+    .sponsor-tier-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      padding-bottom: 2.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sponsor-tier-block:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    /* En-tête : "GOLD —————" — libellé + filet qui s'étire */
+    .sponsor-tier-heading {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 14px;
+      margin-bottom: 1.75rem;
+    }
+
+    .sponsor-tier-heading .tier-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .sponsor-tier-heading .tier-rule {
+      flex: 1;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.35;
+    }
+
+    .sponsor-tier-block[data-tier="platine"] .sponsor-tier-heading { color: #64748b; }
+    .sponsor-tier-block[data-tier="gold"] .sponsor-tier-heading { color: #b8860b; }
+    .sponsor-tier-block[data-tier="bronze"] .sponsor-tier-heading { color: #a8672f; }
+    .sponsor-tier-block[data-tier="partenaire"] .sponsor-tier-heading { color: var(--text-muted); }
+
+    .sponsor-logos-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.75rem;
+      width: 100%;
+    }
+
+    /* Logo nu, sans carte : juste l'image, hauteur uniforme par tier */
+    .sponsor-logo-tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition);
+      filter: drop-shadow(0 2px 6px rgba(15, 25, 35, 0.08));
+    }
+
+    .sponsor-logo-tile:hover {
+      transform: translateY(-3px);
+      filter: drop-shadow(0 8px 16px rgba(15, 25, 35, 0.14));
+    }
+
+    .sponsor-logo-tile img {
+      object-fit: contain;
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+    }
+
+    /* Hauteurs par tier — le platine est le plus imposant, dégressif ensuite */
+    .sponsor-tier-block[data-tier="platine"] .sponsor-logo-tile { height: 76px; }
+    .sponsor-tier-block[data-tier="gold"] .sponsor-logo-tile { height: 62px; }
+    .sponsor-tier-block[data-tier="bronze"] .sponsor-logo-tile { height: 48px; }
+    .sponsor-tier-block[data-tier="partenaire"] .sponsor-logo-tile { height: 38px; }
+
+    /* Partenaires : discrets en niveaux de gris, reprennent leur couleur au survol */
+    .sponsor-tier-block[data-tier="partenaire"] .sponsor-logo-tile img {
+      filter: grayscale(100%);
+      opacity: 0.55;
+      transition: var(--transition);
+    }
+
+    .sponsor-tier-block[data-tier="partenaire"] .sponsor-logo-tile:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* Repli si l'image ne charge pas */
+    .sponsor-logo-name-fallback {
+      display: none;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: var(--pg-blue-dark);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 600px) {
+      .sponsor-logos-grid { gap: 1.75rem; }
+      .sponsor-tier-block[data-tier="platine"] .sponsor-logo-tile { height: 58px; }
+      .sponsor-tier-block[data-tier="gold"] .sponsor-logo-tile { height: 50px; }
+      .sponsor-tier-block[data-tier="bronze"] .sponsor-logo-tile { height: 40px; }
+      .sponsor-tier-block[data-tier="partenaire"] .sponsor-logo-tile { height: 32px; }
     }
 
     /* INSCRIPTION */
@@ -1678,9 +1771,12 @@
     <div class="container">
       <div class="animate-on-scroll">
         <div class="section-label">Partenariat</div>
-        <h2 class="section-title">Devenir Sponsor</h2>
+        <h2 class="section-title">Nos Sponsors &amp; Partenaires</h2>
         <div class="section-divider"></div>
       </div>
+
+      <!-- Logos générés dynamiquement depuis data.js (sponsorTiers / sponsorsPartners) -->
+      <div class="sponsor-tiers" id="sponsor-tiers-container"></div>
 
       <div class="sponsor-card animate-on-scroll stagger-1">
         <!-- PAS de src="" ici pour éviter le déclenchement prématuré de onerror -->
@@ -1894,48 +1990,8 @@
           </div>`;
       });
 
-// --- Programme ---
-document.getElementById('programme-intro-text').textContent = e.programmeIntro;
-
-const programmeContainer = document.querySelector('#programme .container');
-
-// Remplacer le contenu "stay tuned" par le vrai programme
-if (e.programmeAvailable && d.programme && d.programme.length > 0) {
-    // Supprimer la boîte stay-tuned
-    const stayTuned = document.querySelector('.stay-tuned-box');
-    if (stayTuned) stayTuned.remove();
-
-    let programmeHTML = `
-        <div class="programme-timeline animate-on-scroll stagger-1" style="margin-top: 2.5rem;">
-    `;
-
-    d.programme.forEach(item => {
-        const isPause = item.tagClass === 'tag-pause';
-        const isOpening = item.tagClass === 'tag-opening';
-        const isNetworking = item.tagClass === 'tag-networking';
-
-        programmeHTML += `
-            <div class="programme-item ${isPause ? 'pause' : ''}" style="display: flex; gap: 1.5rem; margin-bottom: 1.8rem; align-items: flex-start;">
-                <div style="min-width: 110px; font-weight: 700; color: ${isPause ? '#666' : 'var(--pg-blue-dark)'};">
-                    ${item.time}
-                </div>
-                <div style="flex: 1;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
-                        <span class="tag ${item.tagClass}" style="padding: 3px 10px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700;">
-                            ${item.tag}
-                        </span>
-                        ${item.speaker ? `<strong style="color: var(--pg-blue);">${item.speaker}</strong>` : ''}
-                    </div>
-                    <strong style="font-size: 1.1rem; display: block; margin-bottom: 6px;">${item.title}</strong>
-                    <p style="color: #555; line-height: 1.6;">${item.desc}</p>
-                </div>
-            </div>
-        `;
-    });
-
-    programmeHTML += `</div>`;
-    programmeContainer.insertAdjacentHTML('beforeend', programmeHTML);
-}
+      // --- Programme ---
+      document.getElementById('programme-intro-text').textContent = e.programmeIntro;
 
       // --- Membres ---
       document.getElementById('members-intro').textContent = e.membersIntro;
@@ -1980,7 +2036,37 @@ if (e.programmeAvailable && d.programme && d.programme.length > 0) {
         venueFeatures.innerHTML += `<li>${f}</li>`;
       });
 
-      // --- Sponsors ---
+      // --- Sponsors & Partenaires (logos par tier) ---
+      if (d.sponsorTiers && d.sponsorsPartners) {
+        const tiersContainer = document.getElementById('sponsor-tiers-container');
+        d.sponsorTiers.forEach(tier => {
+          const items = d.sponsorsPartners.filter(s => s.tier === tier.key);
+          if (items.length === 0) return; // tier vide = pas affiché
+
+          let logosHtml = '';
+          items.forEach(s => {
+            const initials = s.name.substring(0, 3).toUpperCase();
+            const inner = `
+              <img src="${s.logo}" alt="${s.name}"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="sponsor-logo-name-fallback" style="display:none;">${s.name}</div>`;
+            logosHtml += s.url
+              ? `<a class="sponsor-logo-tile" href="${s.url}" target="_blank" rel="noopener noreferrer" title="${s.name}">${inner}</a>`
+              : `<div class="sponsor-logo-tile" title="${s.name}">${inner}</div>`;
+          });
+
+          tiersContainer.innerHTML += `
+            <div class="sponsor-tier-block animate-on-scroll" data-tier="${tier.key}">
+              <div class="sponsor-tier-heading">
+                <span class="tier-label">${tier.label}</span>
+                <span class="tier-rule"></span>
+              </div>
+              <div class="sponsor-logos-grid">${logosHtml}</div>
+            </div>`;
+        });
+      }
+
+      // --- CTA "Devenir Sponsor" ---
       // Assignation dynamique du src (pas de src="" dans le HTML = pas d'erreur prématurée)
       document.getElementById('sponsor-img').src = e.sponsorImage;
       if (e.prospectusUrl) {
