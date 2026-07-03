@@ -35,7 +35,7 @@ window.PGDAY_DATA = {
     // Bascule facile du programme :
     // false = affiche "A VENIR / STAY TUNED" (mise à jour ultra simple)
     // true  = affiche le tableau 'programme' ci-dessous
-    programmeAvailable: false
+    programmeAvailable: true
   },
 
   stats: [
@@ -98,10 +98,10 @@ window.PGDAY_DATA = {
     { time: "11:15 - 11:40", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL et la cartographie avec PostGIS", desc: "Cas d’usage géospatiaux et analyse de données géographiques.", speaker: "Baovola Marie Anna" },
     { time: "11:40 - 11:45", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
-    { time: "11:45 - 12:10", tag: "Talk", tagClass: "tag-talk", title: "Développement d’API avec PostgreSQL", desc: "Bonnes pratiques pour exposer et consommer des données PostgreSQL via des APIs modernes.", speaker: " " },
+    { time: "11:45 - 12:10", tag: "Talk", tagClass: "tag-talk", title: "Développement d’API avec PostgreSQL", desc: "Bonnes pratiques pour exposer et consommer des données PostgreSQL via des APIs modernes.", speaker: "RAVAKINIAINA Tokifanantenana" },
     { time: "12:10 - 12:15", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
-    { time: "12:15 - 12:25", tag: "Talk", tagClass: "tag-talk", title: "Retours d’expériences en entreprise & IA", desc: "Cas concrets d’usage PostgreSQL en entreprise et intégration avec l’intelligence artificielle.", speaker: " " },
+    { time: "12:15 - 12:25", tag: "Talk", tagClass: "tag-talk", title: "Retours d’expériences en entreprise & IA", desc: "Cas concrets d’usage PostgreSQL en entreprise et intégration avec l’intelligence artificielle.", speaker: "Dominique RAKOTONIRINA" },
     { time: "12:25 - 12:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
     { time: "12:30 - 13:00", tag: "Networking", tagClass: "tag-networking", title: "Réseautage et collation", desc: "Échanges communautaires autour d’un déjeuner léger.", speaker: "Communauté PostgreSQL Madagascar" }
@@ -132,7 +132,7 @@ window.PGDAY_DATA = {
       photo: "assets/images/photos-organisateurs/tokifanantenana.jpg"
     },
     {
-      name: "Bodoharivola",
+      name: "Bodoarivola",
       role: "Computer Scientist",
       institution: "MATSF",
       category: "Comité de sélection / Program Committee",
@@ -170,6 +170,26 @@ window.PGDAY_DATA = {
       placeholder: true,
       photo: "assets/images/photos-organisateurs/mexin.jpg"
     }
+  ],
+
+  // ============================================
+  // SPONSORS & PARTENAIRES
+  // Pour ajouter un logo : ajoutez une entrée dans "sponsorsPartners"
+  // avec le bon "tier" (doit correspondre à une clé de "sponsorTiers").
+  // Déposez l'image dans assets/images/sponsors/
+  // Les tiers vides ne s'affichent pas automatiquement.
+  // ============================================
+  sponsorTiers: [
+    { key: "platine", label: "Platine", icon: "💎" },
+    { key: "gold", label: "Gold", icon: "🥇" },
+    { key: "bronze", label: "Bronze", icon: "🥉" },
+    { key: "partenaire", label: "Partenaires", icon: "🤝" }
+  ],
+
+  sponsorsPartners: [
+    { name: "AthenaEvent", tier: "gold", logo: "assets/images/sponsors/AthenaEvent.png", url: "https://athena-event.com/fr" },
+    { name: "DALIBO", tier: "bronze", logo: "assets/images/sponsors/dalibo.png", url: "https://www.dalibo.com" },
+    { name: "Afya Bridge", tier: "bronze", logo: "assets/images/sponsors/afyaBridge.png", url: "https://www.afyabridge.com/" }
   ],
 
   venueFeatures: [
