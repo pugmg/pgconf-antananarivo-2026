@@ -189,8 +189,8 @@ window.PGDAY_DATA = {
   sponsorsPartners: [
     { name: "AthenaEvent", tier: "gold", logo: "assets/images/sponsors/AthenaEvent.png", url: "https://athena-event.com/fr" },
     { name: "Cybertec", tier: "platine", logo: "assets/images/sponsors/CYBERTEC_Logo.webp", url: "https://www.cybertec-postgresql.com/en/" },
-    { name: "DALIBO", tier: "bronze", logo: "assets/images/sponsors/dalibo.png", url: "https://www.dalibo.com" },
-    { name: "Afya Bridge", tier: "bronze", logo: "assets/images/sponsors/afyaBridge.png", url: "https://www.afyabridge.com/" }
+    { name: "DALIBO", tier: "bronze", logo: "assets/images/sponsors/Dalibo.png", url: "https://www.dalibo.com" },
+    { name: "Afya Bridge", tier: "bronze", logo: "assets/images/sponsors/afyaBridge.jpeg", url: "https://www.afyabridge.com/" }
   ],
 
   venueFeatures: [
