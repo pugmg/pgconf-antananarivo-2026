@@ -87,15 +87,15 @@ window.PGDAY_DATA = {
     { time: "09:30 - 09:55", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL/PostGIS Behind a National Address System in Madagascar", desc: "GIS Developer, Antananarivo, Madagascar.", speaker: "Lova Andriarimalala" },
     { time: "09:55 - 10:00", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "Lova Andriarimalala" },
    
-    { time: "10:00 - 10:25", tag: "Talk", tagClass: "tag-talk", title: "Sauvegarde et réplication PostgreSQL", desc: "Stratégies de backup, PITR, réplication logique et haute disponibilité.", speaker: "À définir" },
+    { time: "10:00 - 10:25", tag: "Talk", tagClass: "tag-talk", title: "Stay Tuned", desc: "comming soon.", speaker: "À définir" },
     { time: "10:25 - 10:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
     { time: "10:30 - 10:45", tag: "Pause", tagClass: "tag-pause", title: "Pause café", desc: "Échanges entre participants.", speaker: "" },
    
-    { time: "10:45 - 11:10", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL et le Cloud", desc: "Déploiement, gestion et optimisation de PostgreSQL dans les environnements cloud.", speaker: "À définir" },
+    { time: "10:45 - 11:10", tag: "Talk", tagClass: "tag-talk", title: "Stay Tuned", desc: "comming soon.", speaker: "À définir" },
     { time: "11:10 - 11:15", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
-    { time: "11:15 - 11:40", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL et la cartographie avec PostGIS", desc: "Cas d’usage géospatiaux et analyse de données géographiques.", speaker: "Baovola Marie Anna" },
+    { time: "11:15 - 11:40", tag: "Talk", tagClass: "tag-talk", title: "Stay Tuned", desc: "comming soon.", speaker: "" },
     { time: "11:40 - 11:45", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
     { time: "11:45 - 12:10", tag: "Talk", tagClass: "tag-talk", title: "Développement d’API avec PostgreSQL", desc: "Bonnes pratiques pour exposer et consommer des données PostgreSQL via des APIs modernes.", speaker: "RAVAKINIAINA Tokifanantenana" },
