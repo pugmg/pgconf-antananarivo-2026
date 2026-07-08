@@ -81,11 +81,11 @@ window.PGDAY_DATA = {
     { time: "08:50 - 08:55", tag: "Ouverture", tagClass: "tag-opening", title: "Introduction de la communauté MG-PUG", desc: "Présentation de la communauté PostgreSQL Madagascar.", speaker: "MG-PUG" },
     { time: "08:55 - 09:00", tag: "Ouverture", tagClass: "tag-opening", title: "Introduction Ingenosya", desc: "Mot de bienvenue et présentation du sponsor.", speaker: "Ingenosya" },
    
-    { time: "09:00 - 09:25", tag: "Talk", tagClass: "tag-talk", title: "Administration et optimisation PostgreSQL", desc: "Bonnes pratiques d’administration, tuning et optimisation des performances.", speaker: "À définir" },
-    { time: "09:25 - 09:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
+    { time: "09:00 - 09:25", tag: "Talk", tagClass: "tag-talk", title: "Scaling Health Systems with Postgres: Powering HMIS for Reliability and Insight", desc: "Head of Support Engineering, Afya Bridge PLC, Dar es Salaam, Tanzania", speaker: "Fabian Kimambo" },
+    { time: "09:25 - 09:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "Fabian Kimambo" },
    
-    { time: "09:30 - 09:55", tag: "Talk", tagClass: "tag-talk", title: "Sécurité des bases de données PostgreSQL", desc: "Gestion des droits, chiffrement, audits et bonnes pratiques de sécurisation.", speaker: "À définir" },
-    { time: "09:55 - 10:00", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
+    { time: "09:30 - 09:55", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL/PostGIS Behind a National Address System in Madagascar", desc: "GIS Developer, Antananarivo, Madagascar.", speaker: "Lova Andriarimalala" },
+    { time: "09:55 - 10:00", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "Lova Andriarimalala" },
    
     { time: "10:00 - 10:25", tag: "Talk", tagClass: "tag-talk", title: "Sauvegarde et réplication PostgreSQL", desc: "Stratégies de backup, PITR, réplication logique et haute disponibilité.", speaker: "À définir" },
     { time: "10:25 - 10:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
@@ -188,6 +188,7 @@ window.PGDAY_DATA = {
 
   sponsorsPartners: [
     { name: "AthenaEvent", tier: "gold", logo: "assets/images/sponsors/AthenaEvent.png", url: "https://athena-event.com/fr" },
+    { name: "Cybertec", tier: "platine", logo: "assets/images/sponsors/CYBERTEC_Logo.webp", url: "https://www.cybertec-postgresql.com/en/" },
     { name: "DALIBO", tier: "bronze", logo: "assets/images/sponsors/dalibo.png", url: "https://www.dalibo.com" },
     { name: "Afya Bridge", tier: "bronze", logo: "assets/images/sponsors/afyaBridge.png", url: "https://www.afyabridge.com/" }
   ],
