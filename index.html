@@ -687,6 +687,93 @@
       font-weight: 500;
     }
 
+    /* PROGRAMME — TABLEAU DES SESSIONS */
+    .programme-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .programme-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1.25rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      align-items: start;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .programme-row:hover {
+      border-color: var(--pg-blue);
+      box-shadow: var(--shadow);
+      transform: translateX(4px);
+    }
+
+    .programme-time {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--pg-blue);
+      padding-top: 3px;
+      white-space: nowrap;
+    }
+
+    .programme-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .programme-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      width: fit-content;
+      margin-bottom: 4px;
+    }
+
+    .tag-talk    { background: var(--pg-blue-light); color: var(--pg-blue-dark); }
+    .tag-opening { background: #e8f5e9; color: #1b5e20; }
+    .tag-pause   { background: var(--pg-yellow-light); color: #7a4e00; }
+    .tag-networking { background: #f3e5f5; color: #4a148c; }
+
+    .programme-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--pg-blue-dark);
+      line-height: 1.3;
+    }
+
+    .programme-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .programme-speaker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--pg-blue);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 640px) {
+      .programme-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+    }
+
     /* MEMBRES */
     .members-group {
       margin-top: 3rem;
@@ -1709,11 +1796,13 @@
         <p class="section-lead" id="programme-intro-text">Chargement...</p>
       </div>
 
-      <div class="stay-tuned-box animate-on-scroll stagger-1">
+      <div id="stay-tuned-block" class="stay-tuned-box animate-on-scroll stagger-1">
         <span class="stay-tuned-emoji">⏳</span>
         <div class="stay-tuned-title">A VENIR / STAY TUNED</div>
         <div class="stay-tuned-sub">Le programme détaillé sera publié prochainement</div>
       </div>
+
+      <div id="programme-table-container"></div>
     </div>
   </section>
 
@@ -1992,6 +2081,32 @@
 
       // --- Programme ---
       document.getElementById('programme-intro-text').textContent = e.programmeIntro;
+
+      const stayTunedBlock = document.getElementById('stay-tuned-block');
+      const progContainer  = document.getElementById('programme-table-container');
+
+      if (e.programmeAvailable && d.programme && d.programme.length > 0) {
+        // Masquer le "stay tuned" et afficher le tableau
+        stayTunedBlock.style.display = 'none';
+        let html = '<div class="programme-list animate-on-scroll stagger-1">';
+        d.programme.forEach(item => {
+          html += `
+            <div class="programme-row">
+              <div class="programme-time">${item.time}</div>
+              <div class="programme-content">
+                <span class="programme-tag ${item.tagClass || ''}">${item.tag}</span>
+                <div class="programme-title">${item.title}</div>
+                ${item.desc   ? `<div class="programme-desc">${item.desc}</div>`         : ''}
+                ${item.speaker ? `<div class="programme-speaker">🎤 ${item.speaker}</div>` : ''}
+              </div>
+            </div>`;
+        });
+        html += '</div>';
+        progContainer.innerHTML = html;
+      } else {
+        // Garder le "stay tuned" visible, cacher le conteneur vide
+        progContainer.style.display = 'none';
+      }
 
       // --- Membres ---
       document.getElementById('members-intro').textContent = e.membersIntro;
