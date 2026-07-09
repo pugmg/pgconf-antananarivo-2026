@@ -14,7 +14,7 @@ window.PGDAY_DATA = {
     locationLabel: "Chez l'INGENOSYA Anosizato, Antananarivo, Madagascar",
     venueName: "Chez l'INGENOSYA",
     venueAddress: "4ème Etage de l'Immeuble Record Anosizato, Antananarivo 101, Madagascar",
-    venueMapUrl: "https://www.openstreetmap.org/?mlat=-18.8792&mlon=47.5079",
+    venueMapUrl: "https://www.openstreetmap.org/?#map=18/-18.941153/47.501305",
 
     // Texte d'intro pour la section Programme (reste simple)
     programmeIntro: "Moments de partage, conférences techniques et networking autour de PostgreSQL.",
@@ -85,7 +85,7 @@ window.PGDAY_DATA = {
    
     { time: "09:30 - 10:00", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL/PostGIS Behind a National Address System in Madagascar", desc: "GIS Developer, Antananarivo, Madagascar.", speaker: "Lova Andriarimalala" },
    
-    { time: "10:00 - 10:30", tag: "Talk", tagClass: "tag-talk", title: "Stay Tuned", desc: "comming soon.", speaker: "" },
+    { time: "10:00 - 10:30", tag: "Talk", tagClass: "tag-talk", title: "Just use Postgresql!", desc: "Expert PostgreSQL chez Dalibo France", speaker: "Damien Clochard" },
    
     { time: "10:30 - 10:45", tag: "Pause", tagClass: "tag-pause", title: "Pause café", desc: "Échanges entre participants.", speaker: "" },
    
