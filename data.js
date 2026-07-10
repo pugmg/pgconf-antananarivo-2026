@@ -89,9 +89,9 @@ window.PGDAY_DATA = {
    
     { time: "10:30 - 10:45", tag: "Pause", tagClass: "tag-pause", title: "Pause café", desc: "Échanges entre participants.", speaker: "" },
    
-    { time: "10:45 - 11:15", tag: "Talk", tagClass: "tag-talk", title: "Stay Tuned", desc: "comming soon.", speaker: "" },
+    { time: "10:45 - 11:15", tag: "Talk", tagClass: "tag-talk", title: "Performance Tricks in PostgreSQL You Might Not Have Seen Before", desc: "CEO CYBERTEC PostgreSQL International GmbH, basée à Vienne", speaker: "Hans-Jürgen Schönig" },
    
-    { time: "11:15 - 11:45", tag: "Talk", tagClass: "tag-talk", title: "Stay Tuned", desc: "comming soon.", speaker: "" },
+    { time: "11:15 - 11:45", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL au cœur des solutions IA souveraines d'entreprise : Cas de OWNAI®", desc: "co-fondateur NEADS S.A.R.L", speaker: "Dr. Nicaise Choungmo Fofack" },
    
     { time: "11:45 - 12:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
