@@ -171,6 +171,7 @@ window.PGDAY_DATA = {
   sponsorTiers: [
     { key: "platine", label: "Platine", icon: "💎" },
     { key: "gold", label: "Gold", icon: "🥇" },
+    { key: "silver", label: "Silver", icon: "🥈" },
     { key: "bronze", label: "Bronze", icon: "🥉" },
     { key: "partenaire", label: "Partenaires", icon: "🤝" }
   ],
