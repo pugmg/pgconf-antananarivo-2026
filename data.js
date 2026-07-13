@@ -87,15 +87,13 @@ window.PGDAY_DATA = {
    
     { time: "10:00 - 10:30", tag: "Talk", tagClass: "tag-talk", title: "Just use Postgresql!", desc: "Expert PostgreSQL chez Dalibo France", speaker: "Damien Clochard" },
    
-    { time: "10:30 - 10:45", tag: "Pause", tagClass: "tag-pause", title: "Pause café", desc: "Échanges entre participants.", speaker: "" },
+    { time: "10:30 - 11:00", tag: "Talk", tagClass: "tag-talk", title: "Performance Tricks in PostgreSQL You Might Not Have Seen Before", desc: "CEO CYBERTEC PostgreSQL International GmbH, basée à Vienne", speaker: "Hans-Jürgen Schönig" },
    
-    { time: "10:45 - 11:15", tag: "Talk", tagClass: "tag-talk", title: "Performance Tricks in PostgreSQL You Might Not Have Seen Before", desc: "CEO CYBERTEC PostgreSQL International GmbH, basée à Vienne", speaker: "Hans-Jürgen Schönig" },
+    { time: "11:00 - 11:30", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL au cœur des solutions IA souveraines d'entreprise : Cas de OWNAI®", desc: "co-fondateur NEADS S.A.R.L", speaker: "Dr. Nicaise Choungmo Fofack" },
    
-    { time: "11:15 - 11:45", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL au cœur des solutions IA souveraines d'entreprise : Cas de OWNAI®", desc: "co-fondateur NEADS S.A.R.L", speaker: "Dr. Nicaise Choungmo Fofack" },
+    { time: "11:30 - 12:15", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
-    { time: "11:45 - 12:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
-   
-    { time: "12:30 - 13:00", tag: "Networking", tagClass: "tag-networking", title: "Réseautage et collation", desc: "Échanges communautaires autour d’un déjeuner léger.", speaker: "Communauté PostgreSQL Madagascar" }
+    { time: "12:15 - 13:00", tag: "Networking", tagClass: "tag-networking", title: "Réseautage et collation", desc: "Échanges communautaires autour d’un déjeuner léger.", speaker: "Communauté PostgreSQL Madagascar" }
   ],
 
   // Membres — ajoutez simplement la propriété 'photo' avec le chemin vers l'image.
@@ -181,6 +179,9 @@ window.PGDAY_DATA = {
     { name: "AthenaEvent", tier: "gold", logo: "assets/images/sponsors/AthenaEvent.png", url: "https://athena-event.com/fr" },
     { name: "Cybertec", tier: "platine", logo: "assets/images/sponsors/CYBERTEC_Logo.webp", url: "https://www.cybertec-postgresql.com/en/" },
     { name: "DALIBO", tier: "bronze", logo: "assets/images/sponsors/Dalibo.png", url: "https://www.dalibo.com" },
+    { name: "PgUS", tier: "platine", logo: "assets/images/sponsors/PgUS.jpeg", url: "https://postgresql.us/" },
+    { name: "BlackPythonDevs", tier: "platine", logo: "assets/images/sponsors/blackDevpythons.jpeg", url: "https://blackpythondevs.com/" },
+    { name: "Navicat", tier: "silver", logo: "assets/images/sponsors/Navicat.png", url: "https://www.navicat.com/en/products/navicat-for-postgresql" },
     { name: "Afya Bridge", tier: "bronze", logo: "assets/images/sponsors/afyaBridge.jpeg", url: "https://www.afyabridge.com/" }
   ],
 
