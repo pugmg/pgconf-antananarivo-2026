@@ -592,31 +592,75 @@
       background: var(--bg-alt);
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+    /* À PROPOS — texte centré + carrousel plat (ratio d'or) */
+    #a-propos .animate-on-scroll > .section-label,
+    #a-propos .animate-on-scroll > .section-title,
+    #a-propos .animate-on-scroll > .section-lead {
+      text-align: center;
+    }
+
+    #a-propos .section-lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #a-propos .section-divider {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .about-carousel {
+      position: relative;
       margin-top: 3rem;
     }
 
+    .about-track {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 0.5rem 0.25rem 1.5rem;
+      scrollbar-width: none;
+    }
+
+    .about-track::-webkit-scrollbar {
+      display: none;
+    }
+
     .about-card {
-      background: white;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      width: min(320px, 78vw);
+      aspect-ratio: 1.618 / 1;
+      background: var(--bg-alt);
       border-radius: var(--radius);
-      padding: 2rem;
+      padding: 1.618rem;
       border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0.618rem;
+      box-shadow: none;
       transition: var(--transition);
     }
 
     .about-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--pg-blue-light);
+      transform: none;
+      box-shadow: none;
+      border-color: var(--pg-blue);
+      background: white;
     }
 
     .about-card-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--pg-blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
       transition: var(--transition);
     }
 
@@ -633,14 +677,42 @@
     }
 
     .about-card p {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .about-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .about-nav-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--pg-blue-dark);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .about-nav-btn:hover {
+      background: var(--pg-blue);
+      color: white;
+      border-color: var(--pg-blue);
     }
 
     @media (max-width: 640px) {
-      .about-grid {
-        grid-template-columns: 1fr;
+      .about-card {
+        width: 82vw;
       }
     }
 
@@ -1220,16 +1292,19 @@
 
     .sponsor-logo-tile img {
       object-fit: contain;
-      height: 100%;
-      width: auto;
       max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
     }
 
-    /* Hauteurs par tier — le platine est le plus imposant, dégressif ensuite */
-    .sponsor-tier-block[data-tier="platine"] .sponsor-logo-tile { height: 76px; }
-    .sponsor-tier-block[data-tier="gold"] .sponsor-logo-tile { height: 62px; }
-    .sponsor-tier-block[data-tier="bronze"] .sponsor-logo-tile { height: 48px; }
-    .sponsor-tier-block[data-tier="partenaire"] .sponsor-logo-tile { height: 38px; }
+    /* Boîte fixe par tier (largeur + hauteur) — même empreinte visuelle pour tous les logos,
+       quel que soit leur format d'origine (carré, large, petit avec marge interne, etc.) */
+    .sponsor-tier-block[data-tier="platine"] .sponsor-logo-tile { width: 150px; height: 76px; }
+    .sponsor-tier-block[data-tier="gold"] .sponsor-logo-tile { width: 130px; height: 62px; }
+    .sponsor-tier-block[data-tier="silver"] .sponsor-logo-tile { width: 130px; height: 62px; }
+    .sponsor-tier-block[data-tier="bronze"] .sponsor-logo-tile { width: 110px; height: 48px; }
+    .sponsor-tier-block[data-tier="partenaire"] .sponsor-logo-tile { width: 90px; height: 38px; }
 
     /* Partenaires : discrets en niveaux de gris, reprennent leur couleur au survol */
     .sponsor-tier-block[data-tier="partenaire"] .sponsor-logo-tile img {
@@ -1255,10 +1330,11 @@
 
     @media (max-width: 600px) {
       .sponsor-logos-grid { gap: 1.75rem; }
-      .sponsor-tier-block[data-tier="platine"] .sponsor-logo-tile { height: 58px; }
-      .sponsor-tier-block[data-tier="gold"] .sponsor-logo-tile { height: 50px; }
-      .sponsor-tier-block[data-tier="bronze"] .sponsor-logo-tile { height: 40px; }
-      .sponsor-tier-block[data-tier="partenaire"] .sponsor-logo-tile { height: 32px; }
+      .sponsor-tier-block[data-tier="platine"] .sponsor-logo-tile { width: 120px; height: 58px; }
+      .sponsor-tier-block[data-tier="gold"] .sponsor-logo-tile { width: 105px; height: 50px; }
+      .sponsor-tier-block[data-tier="silver"] .sponsor-logo-tile { width: 105px; height: 50px; }
+      .sponsor-tier-block[data-tier="bronze"] .sponsor-logo-tile { width: 90px; height: 40px; }
+      .sponsor-tier-block[data-tier="partenaire"] .sponsor-logo-tile { width: 76px; height: 32px; }
     }
 
     /* INSCRIPTION */
@@ -1778,7 +1854,13 @@
             CONDUITE</a>.
         </p>
       </div>
-      <div class="about-grid" id="about-grid"></div>
+      <div class="about-carousel">
+        <div class="about-track" id="about-grid"></div>
+        <div class="about-nav">
+          <button class="about-nav-btn" onclick="scrollAbout(-1)" aria-label="Précédent">←</button>
+          <button class="about-nav-btn" onclick="scrollAbout(1)" aria-label="Suivant">→</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1997,6 +2079,17 @@
       document.getElementById('modal').classList.remove('active');
       document.body.style.overflow = '';
       pendingUrl = '';
+    }
+
+    /* =========================================
+       CARROUSEL À PROPOS
+       ========================================= */
+    function scrollAbout(dir) {
+      const track = document.getElementById('about-grid');
+      const card = track.querySelector('.about-card');
+      const gap = 24;
+      const distance = card ? card.offsetWidth + gap : 300;
+      track.scrollBy({ left: dir * distance, behavior: 'smooth' });
     }
 
     /* =========================================
@@ -2229,5 +2322,3 @@
 </body>
 
 </html>
-
-```
