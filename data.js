@@ -180,6 +180,7 @@ window.PGDAY_DATA = {
     { name: "AthenaEvent", tier: "gold", logo: "assets/images/sponsors/AthenaEvent.png", url: "https://athena-event.com/fr" },
     { name: "Cybertec", tier: "platine", logo: "assets/images/sponsors/CYBERTEC_Logo.webp", url: "https://www.cybertec-postgresql.com/en/" },
     { name: "DALIBO", tier: "bronze", logo: "assets/images/sponsors/Dalibo.png", url: "https://www.dalibo.com" },
+    { name: "Nic MG", tier: "bronze", logo: "assets/images/sponsors/Logo NIC.MG.png", url: "/www.https://nic.mg" },
     { name: "PgUS", tier: "platine", logo: "assets/images/sponsors/PgUS.jpeg", url: "https://postgresql.us/" },
     { name: "BlackPythonDevs", tier: "platine", logo: "assets/images/sponsors/blackDevpythons.jpeg", url: "https://blackpythondevs.com/" },
     { name: "Navicat", tier: "silver", logo: "assets/images/sponsors/Navicat.png", url: "https://www.navicat.com/en/products/navicat-for-postgresql" },
