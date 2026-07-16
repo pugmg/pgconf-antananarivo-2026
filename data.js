@@ -90,10 +90,12 @@ window.PGDAY_DATA = {
     { time: "10:30 - 11:00", tag: "Talk", tagClass: "tag-talk", title: "Performance Tricks in PostgreSQL You Might Not Have Seen Before", desc: "CEO CYBERTEC PostgreSQL International GmbH, basée à Vienne", speaker: "Hans-Jürgen Schönig" },
    
     { time: "11:00 - 11:30", tag: "Talk", tagClass: "tag-talk", title: "PostgreSQL au cœur des solutions IA souveraines d'entreprise : Cas de OWNAI®", desc: "co-fondateur NEADS S.A.R.L", speaker: "Dr. Nicaise Choungmo Fofack" },
+
+    { time: "11:30 - 12:00", tag: "Talk", tagClass: "tag-talk", title: "SQL Insights - a platform that learns from real PostgreSQL optimization cases and turns that knowledge into actionable recommendations", desc: "Independent Software Engineer Architect, Pune, India", speaker: "Prafulla Ranadive" },
+    
+    { time: "12:00 - 12:30", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
    
-    { time: "11:30 - 12:15", tag: "Q&R", tagClass: "tag-talk", title: "Questions & Réponses", desc: "", speaker: "" },
-   
-    { time: "12:15 - 13:00", tag: "Networking", tagClass: "tag-networking", title: "Réseautage et collation", desc: "Échanges communautaires autour d’un déjeuner léger.", speaker: "Communauté PostgreSQL Madagascar" }
+    { time: "12:30 - 13:00", tag: "Networking", tagClass: "tag-networking", title: "Réseautage et collation", desc: "Échanges communautaires autour d’un déjeuner léger.", speaker: "Communauté PostgreSQL Madagascar" }
   ],
 
   // Membres — ajoutez simplement la propriété 'photo' avec le chemin vers l'image.
